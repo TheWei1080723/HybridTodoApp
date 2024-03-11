@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HybridTodoApp"
+             xmlns:pages="clr-namespace:HybridTodoApp.Components.Pages"
+             xmlns:pagesShared="clr-namespace:HybridTodoApp.Component.Pages;assembly=HybridTodoApp.Component"
+             x:Class="HybridTodoApp.MainPage"
+             BackgroundColor="White">
+    <!--xmlns:pagesShared="" xmlns:pagesShared="clr-namespace:HybridTodoApp.Component.Pages;assembly=HybridTodoApp.Component"-->
+    <!--BackgroundColor="{DynamicResource PageBackgroundColor}">-->
+
+    <!--<BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type local:Routes}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>-->
+    
+    <!--<Grid RowDefinitions="*, Auto">
+
+        <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type local:Routes}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+
+        <Button Text="Native Button" Grid.Row="1" Clicked="Button_Clicked" Margin="10" />
+
+    </Grid>-->
+
+    <ContentPage Title="Home">
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Home}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage Title="Counter">
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Counter}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage Title="Weather">
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Weather}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage Title="Todo">
+        <BlazorWebView  HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <!--<RootComponent Selector="#app" ComponentType="{x:Type pages:Todo}" />-->
+                <RootComponent Selector="#app" ComponentType="{x:Type pagesShared:Todo}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <pages:NewPage1 Title="Native" />
+
+</TabbedPage>
